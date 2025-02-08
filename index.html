@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast App</title>
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body class="min-h-screen bg-blue-500 p-4 md:p-12 flex items-center justify-center">
+    <div class="w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl overflow-hidden bg-white shadow-xl">
+        <!-- Sidebar -->
+        <div class="w-full lg:w-1/4 min-w-[250px] p-6 bg-sky-100 flex flex-col justify-between">
+            <div class="space-y-6">
+                <!-- Search -->
+                <form action="" class="flex relative" id="search">
+                    <input type="text" id="query" placeholder="Search..."
+                        class="w-full px-4 py-2 rounded-l-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" />
+                    <button
+                        class="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 flex items-center justify-center">
+                        <i class="fas fa-search text-"></i>
+                    </button>
+                </form>
+                <!-- Weather Icon -->
+                <div class="weather-icon text-center">
+                    <img src="icons/sun/4.png" alt="" id="icon" class="mx-auto w-32 h-32 object-contain" />
+                </div>
+
+                <!-- Temperature -->
+                <div class="temperature flex justify-center items-start">
+                    <h1 id="temp" class="text-6xl font-light">0</h1>
+                    <span class="temp-unit text-3xl mt-1">°C</span>
+                </div>
+
+                <!-- Date Time -->
+                <div class="date-time text-center text-gray-600">
+                    <p id="date-time">Monday, 12:00</p>
+                </div>
+
+                <div class="divider h-px bg-gray-300"></div>
+
+                <!-- Condition & Rain -->
+                <div class="condition-rain space-y-4">
+                    <div class="condition flex items-center gap-3">
+                        <i class="fas fa-cloud text-gray-600"></i>
+                        <div class="condition text-gray-600" id="condition">condition</div>
+                    </div>
+                    <div class="rain flex items-center gap-3">
+                        <i class="fas fa-tint text-gray-600"></i>
+                        <p id="rain" class="text-gray-600">perc - 0%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="location flex items-center gap-3 mt-6">
+                <div class="location-icon">
+                    <i class="fas fa-map-marker-alt text-gray-600"></i>
+                </div>
+                <div class="location-text text-gray-600">
+                    <p id="location">location</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full lg:w-3/4 p-6 md:p-8 bg-sky-50">
+            <!-- Navigation -->
+            <nav class="flex justify-between items-center">
+                <ul class="options">
+                    <button class="week active px-4 py-2 text-blue-500 font-semibold">week</button>
+                </ul>
+                <ul class="options units flex gap-2">
+                    <button class="unit-button celcius active w-10 h-10 rounded-full bg-gray-900 text-white">°C</button>
+                    <button class="unit-button fahrenheit w-10 h-10 rounded-full bg-white text-gray-900">°F</button>
+                </ul>
+            </nav>
+
+            <!-- Weather Cards -->
+            <div class="cards grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 mt-8" id="weather-cards"></div>
+
+            <!-- Highlights -->
+            <div class="highlights mt-8">
+                <h2 class="text-xl font-semibold mb-4 capitalize">today's highlights</h2>
+                <div class="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="card2 bg-white rounded-2xl p-6">
+                        <h4 class="card-heading text-gray-600 mb-4">Wind Status</h4>
+                        <div class="content text-center">
+                            <p class="wind-speed text-3xl mb-2">0</p>
+                            <p class="text-sm text-gray-500">Low</p>
+                        </div>
+                    </div>
+                    <div class="card2 bg-white rounded-2xl p-6">
+                        <h4 class="card-heading text-gray-600 mb-4">Air Quality</h4>
+                        <div class="content text-center">
+                            <p class="air-quality text-3xl mb-2">0</p>
+                            <p class="air-quality-status text-sm text-gray-500">Low</p>
+                        </div>
+                    </div>
+                    <div class="card2 bg-white rounded-2xl p-6">
+                        <h4 class="card-heading text-gray-600 mb-4">Humidity</h4>
+                        <div class="content text-center">
+                            <p class="humidity text-3xl mb-2">0</p>
+                            <p class="humidity-status text-sm text-gray-500">Low</p>
+                        </div>
+                    </div>
+                    <div class="card2 bg-white rounded-2xl p-6">
+                        <h4 class="card-heading text-gray-600 mb-4">Visibility</h4>
+                        <div class="content text-center">
+                            <p class="visibility text-3xl mb-2">0</p>
+                            <p class="visibility-status text-sm text-gray-500">Low</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
