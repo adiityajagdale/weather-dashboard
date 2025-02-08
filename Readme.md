@@ -2,8 +2,6 @@
 
 A modern, responsive weather dashboard application built with HTML, CSS, and JavaScript, featuring real-time weather updates, temperature unit conversion, and daily forecasts.
 
-![Weather Dashboard Preview](/api/placeholder/800/400)
-
 ## Features
 
 - Real-time weather data display
